@@ -1,0 +1,14 @@
+config:
+    name: 客户模块
+    variables:
+      {}
+    #base_url: ""
+
+teststeps:
+-
+    name: 客户登录01
+    api: api/login.yml
+    variables:
+      {}
+    validate:
+        - eq: ["status_code", 200]

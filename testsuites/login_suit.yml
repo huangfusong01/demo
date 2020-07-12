@@ -1,0 +1,13 @@
+config:
+    name: 登录测试套件
+    variables:
+      username: "18871174012"
+      password: "123456"
+    base_url: "http://customer.17feia.com"
+
+testcases:
+-
+    name: 登录测试套件
+    testcase: testcases\login_testcase.yml
+    variables:
+      {}

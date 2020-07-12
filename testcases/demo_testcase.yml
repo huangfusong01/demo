@@ -1,0 +1,19 @@
+config:
+    name: "demo testcase"
+    variables:
+        device_sn: "ABC"
+        username: ${ENV(USERNAME)}
+        password: ${ENV(PASSWORD)}
+    base_url: "http://127.0.0.1:5000"
+
+teststeps:
+-
+    name: demo step 1
+    api: /author/v1/subject/login
+    variables:
+
+    extract:
+        - token: content.json()
+    validate:
+        - eq: ["status_code", 200]
+
