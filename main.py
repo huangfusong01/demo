@@ -1,4 +1,5 @@
 #!/bin/bash
+#coding=utf-8
 import os
 import requests
 def send_ding_msg(msg,title,msg_url):
@@ -18,8 +19,8 @@ def send_ding_msg(msg,title,msg_url):
     requests.post(url=url,json=ding_msg,headers=headers)
 
 if __name__ == "__main__":
-    msg = '×Ô¶¯»¯¼à¿ØCI/CDÌáĞÑ'
-    title= "×Ô¶¯»¯¼à¿ØCI/CDÌáĞÑ:Çëµã»÷²é¿´×Ô¶¯»¯±¨¸æ"
+    msg = 'è‡ªåŠ¨åŒ–ç›‘æ§CI/CDæé†’'
+    title= "è‡ªåŠ¨åŒ–ç›‘æ§CI/CDæé†’:è¯·ç‚¹å‡»æŸ¥çœ‹è‡ªåŠ¨åŒ–æŠ¥å‘Š"
     os.system("rm -rf reports")
     #os.system("rmdir/s /q reports")
     os.system("mkdir reports")
@@ -27,11 +28,11 @@ if __name__ == "__main__":
     test_path = os.path.join(dir,"testsuites","login_suit.yml")
     print(test_path)
     os.system(f"hrun % s" % test_path)
-    #»ñÈ¡×îĞÂµÄ²âÊÔ±¨¸æ
+    #è·å–æœ€æ–°çš„æµ‹è¯•æŠ¥å‘Š
     lastest_report = os.listdir("./reports")[-1]
-    #¹ÒÔØ²âÊÔ±¨¸æµ½nginxÏÂ
+    #æŒ‚è½½æµ‹è¯•æŠ¥å‘Šåˆ°nginxä¸‹
     os.system(f"cp /data/project/python/workspace/hruntest/reports/*  /usr/local/docker/nginx_v/reports")
-    #·¢ËÍ¶¤¶¤±¨¸æ
+    #å‘é€é’‰é’‰æŠ¥å‘Š
     send_ding_msg(msg=msg,title=title,msg_url=f"http://139.9.179.188:8080/{lastest_report}")
 
 
