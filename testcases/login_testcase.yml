@@ -1,8 +1,8 @@
 config:
     name: 客户模块
-    variables:
-      {}
-    #base_url: ""
+    output:
+      - msg
+    #base_url: "http://customer.17feia.com"
 
 teststeps:
 -
@@ -10,5 +10,9 @@ teststeps:
     api: api/login.yml
     variables:
       {}
+
     validate:
-        - eq: ["status_code", 200]
+      - eq: ["status_code", 200]
+    extract:
+      - msg: content.msg
+

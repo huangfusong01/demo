@@ -1,18 +1,20 @@
 name: 客户登录
 variables:
-  {}
+    username: "18871174012"
+    password: "123456"
 request:
-    url: /author/v1/subject/login
+    url: "http://customer.17feia.com/author/v1/subject/login"
     method: POST
     headers:
         Content-Type: "application/json"
     json:
-        "username": $username
-        "password": $password
+        username: $username
+        password: $password
+
 
 
 validate:
     - eq: ["status_code", 200]
     - eq:
-        - content.msg
+        -  $msg
         - "LOGIN_SUCCESS"
