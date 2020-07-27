@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 import os
 
 if __name__ == "__main__":
