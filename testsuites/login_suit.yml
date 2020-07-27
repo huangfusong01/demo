@@ -8,7 +8,7 @@ config:
 testcases:
 -
     name: 登录测试套件
-    testcase: testcases\login_testcase.yml
+    testcase: testcases/login_testcase.yml
     variables:
       {}
     parameters:
